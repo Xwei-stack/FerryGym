@@ -153,8 +153,8 @@ class FerryGymEnv(gym.Env):
         self.observation_space = spaces.Dict(
             {
                 "agent_position": spaces.Box(low=np.array([54.000, 10.00, 0.0]), high=np.array([54.500, 10.500, MAX_VELOCITY]), dtype=np.float32),
-                "agent_direction": spaces.Box(low=0.0, high=360.0, dtype=np.float32),
-                "agent_speed": spaces.Box(low=0.0, high=MAX_VELOCITY, dtype=np.float32),
+                "agent_direction": spaces.Box(low=np.array([0.0]), high=np.array([360.0]), dtype=np.float32),
+                "agent_speed": spaces.Box(low=np.array([0.0]), high=np.array([MAX_VELOCITY]), dtype=np.float32),
                 "target": spaces.Box(low=np.array([54.000, 10.00]), high=np.array([54.500, 10.500]), dtype=np.float32),
                 "neighborhood": spaces.Box(low=0, high=255, shape=(NEIGHBORHOOD_SIZE, NEIGHBORHOOD_SIZE, 3), dtype=np.uint8),
                 "agent_starting_position": spaces.Box(low=np.array([54.000, 10.00, 0.0]), high=np.array([54.500, 10.500, MAX_VELOCITY]), dtype=np.float32),
